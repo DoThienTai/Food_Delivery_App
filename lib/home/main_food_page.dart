@@ -15,8 +15,6 @@ class MainFoodPage extends StatefulWidget {
 class _MainFoodPageState extends State<MainFoodPage> {
   @override
   Widget build(BuildContext context) {
-    print(MediaQuery.of(context).size.width.toString());
-    print(MediaQuery.of(context).size.height.toString());
     return Scaffold(
       body: Column(
         children: [
@@ -52,6 +50,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                       child: Icon(
                         Icons.search,
                         color: Colors.white,
+                        size: Dimensions.iconSize24,
                       ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(Dimensions.radius15),
@@ -64,7 +63,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
             ),
           ),
           //showing the body
-          BodyFoodPage(),
+          Expanded(child: SingleChildScrollView(child: BodyFoodPage(),))
         ],
       ),
     );
